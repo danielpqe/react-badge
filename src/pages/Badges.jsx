@@ -6,8 +6,21 @@ import confLogo from '../images/badge-header.svg';
 import BadgesList from '../components/BadgesList';
 
 class Badges extends React.Component {
-  state = {
-    data: [
+
+  constructor(props){
+    console.log('1. Contructor')
+    super(props)
+    this.state = {
+      loading: true,
+      error: null,
+      data:[]
+    };
+  }
+componentDidMount(){
+  console.log('3. componentDidMount')
+  this.timeoutId=setTimeout(()=>{
+  this.setState({
+    data:[
       {
         id: '2de30c42-9deb-40fc-a41f-05e62b5939a7',
         firstName: 'Freda',
@@ -38,10 +51,20 @@ class Badges extends React.Component {
         avatarUrl:
           'https://www.gravatar.com/avatar/e74e87d40e55b9ff9791c78892e55cb7?d=identicon',
       },
-    ],
-  };
+    ]
+  })
+}, 3000)
+}
 
+componentDidUpdate(prevProps, prevState){
+  console.log('5. componentDidUpdate')
+}
+componentWillUnmount(){
+  console.log('6. componentWillUnmount')
+  clearTimeout(this.timeoutId)
+}
   render() {
+    console.log('2. Render')
     return (
       <React.Fragment>
         <div className="Badges">
