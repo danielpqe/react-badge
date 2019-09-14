@@ -5,7 +5,7 @@
   "main": "index.js",
   "author": "@danielpqe",
   "license": "MIT",
-  "homepage": "https://danielpqe.github.io/react-badges/",
+  "homepage": "https://danielpqe.github.io/react-badge/",
   "scripts": {
     "start": "npm-run-all -p client server",
     "client": "react-scripts start",
